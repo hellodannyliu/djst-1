@@ -72,13 +72,13 @@ gamma=0.01
 Estimation
 
 ```
-$ dJST -est config /Your_Path/training.properties
+$ dJST -est -config /Your_Path/training.properties
 ```
 
 Inference
 
 ```
-$ dJST -inf config /Your_Path/inference.properties
+$ dJST -inf -config /Your_Path/inference.properties
 ```
 
 #### Data format
