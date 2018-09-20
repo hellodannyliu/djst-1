@@ -173,13 +173,13 @@ gamma=0.01
 Estimation
 
 ```
-$ dJST -est config /Your_Path/training.properties
+$ dJST -est -config /Your_Path/training.properties
 ```
 
 Inference
 
 ```
-$ dJST -inf config /Your_Path/inference.properties
+$ dJST -inf -config /Your_Path/inference.properties
 ```
 
 #### 数据格式
@@ -207,7 +207,9 @@ traindata
 - 每个document占据一行，document内的语句，由单词组成，词之间由1个空格隔开；
 - document中第一个词，是document id；
 ```
+#### 注意！！！
 
+训练后生成的wordmap.txt文件，第一行为整个文件的有效行数，目前算法没有完成这个步骤！
 
 Reference:
 
