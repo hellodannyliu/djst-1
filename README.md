@@ -216,3 +216,33 @@ Reference:
 [1] https://github.com/linron84/JST <br>
 [2] http://gibbslda.sourceforge.net/. <br>
 [3] He Y, Lin C, Gao W, et al. Dynamic joint sentiment-topic model[J]. Acm Transactions on Intelligent Systems & Technology, 2014, 5(1):1-21. <br>
+
+#### BibTeX 文献导入（新增）
+
+如果你的数据是 `.bib` 文件，可以先转换成 DJST 训练需要的语料格式（每行一个文档）：
+
+```
+<doc_id> <token1> <token2> ...
+```
+
+新增脚本路径：
+
+```
+tools/import_bib_to_djst.py
+```
+
+示例命令：
+
+```bash
+python3 tools/import_bib_to_djst.py \
+  --input /path/to/references.bib \
+  --output /path/to/training/epoch_1.txt
+```
+
+可选参数：
+
+- `--fields`：指定用于拼接文本的 Bib 字段（默认：`title,abstract,keywords,author,journal,booktitle`）
+- `--min-token-length`：最小 token 长度（默认：`2`）
+- `--include-entry-type`：将 `article`/`inproceedings` 等条目类型也加入文档文本
+
+如果你有多期（epoch）数据，可把每期转换后的 txt 文件名写入 `trainlist.txt`，然后按原训练流程执行。
